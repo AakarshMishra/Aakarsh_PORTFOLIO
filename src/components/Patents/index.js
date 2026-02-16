@@ -10,7 +10,7 @@ const Patents = ({openModal,setOpenModal}) => {
   return (
     <Container id="patents">
       <Wrapper>
-        <Title>Patents and Certifications</Title>
+        <Title>Patents ,Certifications and Publications</Title>
         <Desc>
         Here are some of my patents and Certications.
         </Desc>
@@ -32,6 +32,12 @@ const Patents = ({openModal,setOpenModal}) => {
             :
             <ToggleButton value="certifications" onClick={() => setToggle('certifications')}>CERTIFICATIONS</ToggleButton>
           }
+          <Divider />
+          {toggle === 'publication' ?
+            <ToggleButton active value="publication" onClick={() => setToggle('publication')}>PUBLICATIONS</ToggleButton>
+            :
+            <ToggleButton value="publication" onClick={() => setToggle('publication')}>PUBLICATIONS</ToggleButton>
+          }
         </ToggleButtonGroup>
         <CardContainer>
           {toggle === 'all' && patents
@@ -48,5 +54,6 @@ const Patents = ({openModal,setOpenModal}) => {
     </Container>
   )
 }
+
 
 export default Patents
